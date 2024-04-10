@@ -1,0 +1,16 @@
+public class Mazoa
+{
+  private KartaZerrenda mazoKartak;
+  private static Mazoa nireMazoa = null;
+  private Mazoa() 
+  { 
+    this.mazoKartak= new KartaZerrenda(); 
+  }
+  public static Mazoa getMazoa()
+  {
+  if (nireMazoa==null) {nireMazoa = new Mazoa();}
+  return nireMazoa;
+  }
+  
+  
+}
