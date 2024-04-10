@@ -8,9 +8,22 @@ public class Mazoa
   }
   public static Mazoa getMazoa()
   {
-  if (nireMazoa==null) {nireMazoa = new Mazoa();}
+  if (nireMazoa==null) 
+  {
+    nireMazoa = new Mazoa();
+  }
   return nireMazoa;
   }
-  
+  public Karta kartaEman()
+  {
+
+
+  }
+  private void kartaHartu()
+  {
+
+
+  }
+
   
 }
