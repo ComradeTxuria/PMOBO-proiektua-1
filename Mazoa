@@ -16,13 +16,11 @@ public class Mazoa
   }
   public Karta kartaEman()
   {
-
-
+    //Iterator, con remove, para quitar las cartas.
   }
   private void kartaHartu()
   {
-
-
+    //Añade las cartas de la mahaia al array del mazo.
   }
 
   
