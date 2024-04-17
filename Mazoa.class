@@ -33,12 +33,8 @@ public class Mazoa
 
   public Karta kartaEman()
   {
-    Iterator<Karta> itr = this.getIteradorea();
-    if (itr.hasNext()){ 
-      Karta k = itr.next();
-      this.kenduKarta(k);
-      return k;
-    } 
+    return mazoKartak.get(0);
+    mazoKartak.remove(0);
   }
 
   /* HACER MÁS TARDE
