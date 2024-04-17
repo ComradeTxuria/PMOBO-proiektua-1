@@ -23,7 +23,7 @@ public class Mazoa
 
   private Iterator<Karta> getIteradorea()
   {
-    return this.mazoKartak.iterator();
+    return mazoKartak.iterator();
   }
 
   public void kenduKarta(Karta pKarta)
