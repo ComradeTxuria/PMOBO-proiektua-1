@@ -1,0 +1,16 @@
+package unoproiektua;
+
+public class Karta {
+	
+	protected String kolore;
+	
+	public Karta(String pKolore) {
+		this.kolore = pKolore;
+	}
+	
+	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
+		
+	}
+	
+}
+
