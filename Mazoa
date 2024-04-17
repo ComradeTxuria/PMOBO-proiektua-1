@@ -1,27 +1,51 @@
+package mazoa;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Mazoa
 {
   private KartaZerrenda mazoKartak;
   private static Mazoa nireMazoa = null;
+
   private Mazoa() 
   { 
     this.mazoKartak= new KartaZerrenda(); 
   }
+
   public static Mazoa getMazoa()
   {
-  if (nireMazoa==null) 
-  {
-    nireMazoa = new Mazoa();
-  }
-  return nireMazoa;
-  }
-  public Karta kartaEman()
-  {
-    //Iterator, con remove, para quitar las cartas.
-  }
-  private void kartaHartu()
-  {
-    //Añade las cartas de la mahaia al array del mazo.
+    if (nireMazoa==null) 
+    {
+      nireMazoa = new Mazoa();
+    }
+    return nireMazoa;
   }
 
-  
+  private Iterator<Karta> getIteradorea()
+  {
+    return this.mazoKartak.iterator();
+  }
+
+  public void kenduKarta(Karta pKarta)
+  {
+    this.mazoKartak.remove(pKarta);
+  }
+
+  public Karta kartaEman()
+  {
+    Iterator<Karta> itr = this.getIteradorea();
+    if (itr.hasNext()){ 
+      Karta k = itr.next();
+      this.kenduKarta(k);
+      return k;
+    } 
+  }
+
+  /* HACER MÁS TARDE
+  private void kartaHartu(Karta pKarta)
+  {
+    this.mazoKartak.add(pKarta);
+  }
+  */
+
 }
