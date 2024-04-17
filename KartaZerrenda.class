@@ -1,0 +1,26 @@
+public class KartaZerrenda {
+	private ArrayList<Karta> kLista;
+
+	public KartaZerrenda() {
+		kLista = new ArrayList<>();
+	}
+
+	private Iterator<Karta> getIterador(){
+		return this.kLista.iterator();
+	}
+
+	public Karta getpKarta() {
+		return this.pKarta;
+	}
+
+public void kenduKarta(Karta pKarta) {
+        if (kLista.contains(pKarta)) {
+            kLista.remove(pKarta);
+        } 
+}
+
+public void gehituKarta (Karta pKarta) {
+        if (kLista.contains(pKarta)) {
+            kLista.add(pKarta);
+        } 
+}
