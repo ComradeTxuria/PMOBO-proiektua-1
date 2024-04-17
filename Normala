@@ -1,0 +1,14 @@
+public class Normala extends Karta {
+	
+	private int zenbaki;
+	
+	public Normala(int pZenbaki, String pKolore) {
+		super(pKolore);
+		this.zenbaki = pZenbaki;
+	}
+	public void eginAkzio() {
+		
+		
+	}
+
+}
