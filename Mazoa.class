@@ -6,6 +6,7 @@ public class Mazoa
 {
   private KartaZerrenda mazoKartak;
   private static Mazoa nireMazoa = null;
+  private int i = 0;
 
   private Mazoa() 
   { 
@@ -36,6 +37,59 @@ public class Mazoa
     return mazoKartak.get(0);
     mazoKartak.remove(0);
   }
+
+  public void kartaSortu()
+  {
+    //Horia
+    Karta h0 = new Karta;
+    h0.kolorea = "Horia";
+    h0.zenbakia = 0; 
+
+    while (i < 10)
+    {
+       Karta h = new Karta;
+       h.kolorea = "Horia";
+       h.zenbakia = i;
+    }
+
+    //Urdina 
+    Karta u0 = new Karta;
+    u0.kolorea = "Urdina";
+    u0.zenbakia = 0; 
+
+    while (i < 10)
+    {
+       Karta h = new Karta;
+       h.kolorea = "Urdina";
+       h.zenbakia = i;
+    }
+
+    //Gorria 
+    Karta g0 = new Karta;
+    g0.kolorea = "Gorria";
+    g0.zenbakia = 0; 
+
+    while (i < 10)
+    {
+       Karta h = new Karta;
+       h.kolorea = "Gorria";
+       h.zenbakia = i;
+    }
+
+    //Berdea 
+    Karta b0 = new Karta;
+    b0.kolorea = "Berdea";
+    b0.zenbakia = 0;
+
+    while (i < 10)
+    {
+       Karta h = new Karta;
+       h.kolorea = "Berdea";
+       h.zenbakia = i;
+    }  
+ }
+
+
 
   /* HACER MÁS TARDE
   private void kartaHartu(Karta pKarta)
