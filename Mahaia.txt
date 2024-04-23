@@ -20,11 +20,11 @@ private Mahaia() {
     }
   
 public void gehituKarta(pKarta Karta) {
-        mCarta.gehituKarta(Karta);
+        mCarta.gehituKarta.add(Karta);
     }
 
     public void ItzuliKarta(pKarta Karta) {
-        mCarta.ItzuliKarta(Karta);
+        mCarta.ItzuliKarta.add(Karta);
    
 }
 
