@@ -1,0 +1,34 @@
+package Mahaia;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
+public class Mahaia {
+    private KartaZerrenda mKartak;
+    private Mahaia mahaia;
+    private static Mahaia nireMahaia = null;
+
+
+    private Mahaia() {
+        nireMahaia = new ArrayList<>();
+    }
+
+
+    public static Mahaia getNireMahaia() {
+        if (nireMahaia == null) {
+            nireMahaia = new Mahaia();
+        }
+        return nireMahaia;
+    }
+
+    		
+
+
+   
+
+
+
+
+    public void GehituKarta(Karta karta) {
+        nireMahaia.add(karta);
+    }
