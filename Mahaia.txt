@@ -4,12 +4,10 @@ import java.util.Iterator;
 
 
 public class Mahaia {
-    private KartaZerrenda mKartak;
-    private Mahaia mahaia;
-    private static Mahaia nireMahaia = null;
-
-
-    private Mahaia() {
+    private static Mahaia NireMahaia;
+    private Mahaia Mahaia;
+    private KartaZerrenda mKarta;
+private Mahaia() {
         nireMahaia = new ArrayList<>();
     }
 
@@ -20,15 +18,13 @@ public class Mahaia {
         }
         return nireMahaia;
     }
-
-    		
-
-
-   
-
-
-
-
-    public void GehituKarta(Karta karta) {
-        nireMahaia.add(karta);
+  
+public void gehituKarta(pKarta Karta) {
+        mCarta.gehituKarta(Karta);
     }
+
+    public void ItzuliKarta(pKarta Karta) {
+        mCarta.ItzuliKarta(Karta);
+   
+}
+
