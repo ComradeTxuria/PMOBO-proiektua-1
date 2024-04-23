@@ -46,6 +46,6 @@ public class JokalariLista {
 	
 	private int getJokalariKop()
 	{
-		return Teklatua.getInt();
+		return Teklatua.getInt();   //try / catch erabili behar da 0 jokalari jarri ahal ez izateko eta 4 maximoa izateko
 	}
 }
