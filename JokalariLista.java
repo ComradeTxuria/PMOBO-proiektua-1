@@ -22,24 +22,30 @@ public class JokalariLista {
 	}
 	
 	//iterator
-	private Iterator<Jokalari> getIterator()
+	/*private Iterator<Jokalari> getIterator()
 	{
 		return this.jLista.iterator();
-	}
-	//while batekin egin
-	/*public void jolastuPartida()
-	{
-		Iterator<Jokalari> itr = this.getIterator();
-		Jokalari jokalaria = null;
-		while (itr.hasNext())
-		{
-			jokalaria = itr.next();
-			jokalaria.jolastuTurnoa();
-		}
-		if (itr.hasNext()==false)
-		{
-			
-		}
 	}*/
+	
+	//partida
+	public void jolastuPartida()
+	{
+		boolean JokoaAmaitu = false;
+		int i=0;
+		Jokalari jokalaria = null;
+		int maxJok = getJokalariKop();
+		while (i<maxJok && JokoaAmaitu==false)
+		{
+			jokalaria.jolastuTurnoa();
+			if (i==maxJok)
+			{
+				i=0;
+			}
+		}	
+	}
+	
+	private int getJokalariKop()
+	{
+		return Teklatua.getInt();
+	}
 }
-
