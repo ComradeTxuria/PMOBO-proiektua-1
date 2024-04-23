@@ -6,11 +6,13 @@ public class JokalariLista {
 	//atributuak
 	private ArrayList<Jokalari> jLista;
 	private static JokalariLista nireJokalariLista = null;
+	private static int maxJok = getJokalariKop();
 	
 	//eraikitzailea eta singleton patroia
 	private JokalariLista()
 	{
 		this.jLista = new ArrayList<Jokalari>();
+		gehituJok();
 	}
 	public static JokalariLista getJokalariLista() 
 	{
@@ -20,6 +22,17 @@ public class JokalariLista {
 		}
 		return nireJokalariLista;
 	}
+	
+	private void gehituJok()
+	{
+		int i = 0;
+		while(i<maxJok)
+		{
+			Jokalari jokalaria = new Jokalari("izena");
+			jLista.add(jokalaria);
+		}
+	}
+	
 	
 	//iterator
 	/*private Iterator<Jokalari> getIterator()
@@ -33,7 +46,6 @@ public class JokalariLista {
 		boolean JokoaAmaitu = false;
 		int i=0;
 		Jokalari jokalaria = null;
-		int maxJok = getJokalariKop();
 		while (i<maxJok && JokoaAmaitu==false)
 		{
 			jokalaria.jolastuTurnoa();
@@ -44,8 +56,14 @@ public class JokalariLista {
 		}	
 	}
 	
-	private int getJokalariKop()
+	private static int getJokalariKop()
 	{
-		return Teklatua.getInt();   //try / catch erabili behar da 0 jokalari jarri ahal ez izateko eta 4 maximoa izateko
+		return 4; //Teklatua.getInt();
 	}
 }
+
+// jokoa nola amaitu??? atributo batekin egin??? funtzio batekin whilean???
+// iterator ez da erabili behar izan oraingoz
+// izena eta jokalari kopurua jokalaria editatu ahal izango ditu baina oraingoz ez  
+//try / catch erabili behar da 0 jokalari jarri ahal ez izateko eta 4 maximoa izateko
+
