@@ -7,7 +7,10 @@ public class Karta {
 	public Karta(String pKolore) {
 		this.kolore = pKolore;
 	}
-	
+
+	public String getKolore(){
+		return kolore;
+	}
 	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las acciones que son!!
 		
 	}
