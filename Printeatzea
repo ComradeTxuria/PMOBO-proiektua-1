@@ -1,4 +1,3 @@
-
 public class Printeatzea {
 	
 	public Printeatzea() {
@@ -38,13 +37,13 @@ public class Printeatzea {
 		while (jokalariKop!=0) {
 			
 			jokalariKop = jokalariKop-1;
-			Jokalari jok = new Jokalari();
+			Jokalari jok = new Jokalari(null);
 			
 			n = n+1;
 		}
 	}
 
-	public void printKarta() {
+	private void printKarta() {
 		
 		
 	}
