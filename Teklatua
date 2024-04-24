@@ -21,12 +21,12 @@ public class Teklatua {
 		return nireTeklatua;
 	}
 	
-	public String getString() {
+	public String getString(String pMezua) {
 		String mezua = sc.nextLine();
 		return mezua;
 	}
 	
-	public int getInt() {
+	public int getInt(String pMezua) {
 		int zenb = sc.nextInt();
 		return zenb;
 	}
