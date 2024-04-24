@@ -1,6 +1,4 @@
 package UnoProiektua;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Jokalari {
 	private String id;
@@ -28,8 +26,8 @@ public class Jokalari {
 			}
 			if(kartaBotaBai() == true)
 			{
-				int botatzeko = Teklatua.getInt();
-				Karta bota = eskua.get(botatzeko);
+				int botatzeko = Teklatua.getTeklatua().getInt("Ipini mota nahi duzun karta");
+				Karta bota = eskua.getKarta(botatzeko);
 				kartaEman(bota);
 				jolastu = false;
 			}
@@ -42,25 +40,25 @@ public class Jokalari {
 	
 	private Karta kartaHartu()
 	{
-		Karta k = Mazoa.kartaEman();
+		Karta k = Mazoa.getMazoa().kartaEman();
 		return k;
 	}
 	
 	private boolean kartaBotaBai()
 	{
-		Karta erdiko = Mahaia.kartaEman();
+		Karta erdiko = Mahaia.getMahaia().itzuliKarta();
 		boolean bota = eskua.berdina(erdiko);
 		return bota;
 	}
 	
 	private void kartaEman(Karta pKarta)
 	{
-		Mahaia.gehituKarta(pKarta);
+		Mahaia.getMahaia().gehituKarta(pKarta);
 	}
 
 }
 
-//zenbat adliz hartu daiteke kartak?
+//zenbat adliz hartu daiteke kartak? 2
 //errore bat egotekotan ez dago amaitua
 //zergatik get txarto??
 //kartaBotaBai KartaZerrendan egin behar da
