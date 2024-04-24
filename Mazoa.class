@@ -1,82 +1,61 @@
 package mazoa;
-import java.util.ArrayList;
-import java.util.Iterator;
+public class Mazoa {
+	private KartaZerrenda mazoKartak;
+	private static Mazoa nireMazoa = null;
 
-public class Mazoa
-{
-  private KartaZerrenda mazoKartak;
-  private static Mazoa nireMazoa = null;
-  private int i = 0;
+	private Mazoa() {
+		this.mazoKartak = new KartaZerrenda();
+	}
 
-  private Mazoa() 
-  { 
-    this.mazoKartak= new KartaZerrenda(); 
-  }
-
-  public static Mazoa getMazoa()
-  {
-    if (nireMazoa==null) 
-    {
-      nireMazoa = new Mazoa();
-    }
-    return nireMazoa;
-  }
-
-  private Iterator<Karta> getIteradorea()
-  {
-    return mazoKartak.iterator();
-  }
-
-  public void kenduKarta(Karta pKarta)
-  {
-    this.mazoKartak.remove(pKarta);
-  }
-
-  public Karta kartaEman()
-  {
-    return mazoKartak.get(0);
-    mazoKartak.remove(0);
-  }
-
-  public void kartaSortu() {
-    
-    // Horia
-    for (int i = 0; i < 19; i++) {
-        Karta h = new Karta();
-        h.kolorea = "Horia";
-        h.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
-    }
-
-    // Urdina
-    for (int i = 0; i < 19; i++) {
-        Karta u = new Karta();
-        u.kolorea = "Urdina";
-        u.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
-    }
-
-    // Gorria
-    for (int i = 0; i < 19; i++) {
-        Karta g = new Karta();
-        g.kolorea = "Gorria";
-        g.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
-    }
-
-    // Berdea
-    for (int i = 0; i < 19; i++) {
-        Karta b = new Karta();
-        b.kolorea = "Berdea";
-        b.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
-    }
-}
+	public static Mazoa getMazoa() {
+		if (nireMazoa == null) {
+			nireMazoa = new Mazoa();
+		}
+		return nireMazoa;
+	}
 
 
+	public Karta kartaEman() {
+		Karta k = mazoKartak.getKarta(0);
+		mazoKartak.kenduKarta(0);
+		return k;
+	}
 
+	private void kartaSortu() {
 
-  /* HACER MÁS TARDE
-  private void kartaHartu(Karta pKarta)
-  {
-    this.mazoKartak.add(pKarta);
-  }
-  */
+		// Horia
+
+			Karta h0 = new Normala(0, "Horia");
+		for (int i = 1; i < 10; i++) {
+			Karta h = new Normala(i, "Horia");
+			Karta h2 = new Normala(i, "Horia");
+		}
+
+		// Urdina
+			Karta u0 = new Normala(0, "Urdina");
+		for (int i = 1; i < 10; i++) {
+			Karta u = new Normala(i, "Urdina");
+			Karta u2 = new Normala(i, "Urdina");
+		}
+
+		// Gorria
+			Karta g0 = new Normala(0, "Gorria");
+		for (int i = 1; i < 10; i++) {
+			Karta g = new Normala(i, "Gorria");
+			Karta g2 = new Normala(i, "Gorria");
+		}
+
+		// Berdea
+			Karta b0 = new Normala(0, "Berdea");
+		for (int i = 1; i < 10; i++) {
+			Karta b = new Normala(i, "Berdea");
+			Karta b2 = new Normala(i, "Berdea");
+		}
+	}
+
+	/*
+	 * HACER MÁS TARDE private void kartaHartu(Karta pKarta) {
+	 * this.mazoKartak.add(pKarta); }
+	 */
 
 }
