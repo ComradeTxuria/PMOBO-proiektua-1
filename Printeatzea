@@ -6,15 +6,25 @@ public class Printeatzea {
 	
 	public void printMenua() {
 		
-		int n = 1;
-		int jokalariKop = 0;
-		
 		System.out.println(" _     _      ____       _  ____  _  __ ____  ____ \r\n"
 				+ "/ \\ /\\/ \\  /|/  _ \\     / |/  _ \\/ |/ //  _ \\/  _ \\\r\n"
 				+ "| | ||| |\\ ||| / \\|     | || / \\||   / | / \\|| / \\|\r\n"
 				+ "| \\_/|| | \\||| \\_/|  /\\_| || \\_/||   \\ | \\_/|| |-||\r\n"
 				+ "\\____/\\_/  \\|\\____/  \\____/\\____/\\_|\\_\\\\____/\\_/ \\|");
+		
+	}
+
+	private void printKarta() {
+		
+		
+	}
+}
+
+
+
 		/*
+		int n = 1;
+		 int jokalariKop = 0;
 		try {
 		System.out.println("Sartu jokalari kopurua mesedez:");
 		jokalariKop = JokalariLista.getJokalariKop();
@@ -28,7 +38,7 @@ public class Printeatzea {
 		}
 		
 		*/
-		
+		/*
 		while (jokalariKop<=0) {
 			
 			System.out.println("Sartu jokalari kopurua mesedez:");
@@ -41,10 +51,4 @@ public class Printeatzea {
 			
 			n = n+1;
 		}
-	}
-
-	private void printKarta() {
-		
-		
-	}
-}
+		*/
