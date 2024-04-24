@@ -23,10 +23,10 @@ public class Jokalari {
 				for (int i=0; i<5; i++)
 				{
 					Karta k = kartaHartu();
-					eskua.add(k);
+					eskua.gehituKarta(k);
 				}	
 			}
-			if(kartaBotaBai == true)
+			if(kartaBotaBai() == true)
 			{
 				int botatzeko = Teklatua.getInt();
 				Karta bota = eskua.get(botatzeko);
