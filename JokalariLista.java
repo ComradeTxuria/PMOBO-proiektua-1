@@ -56,7 +56,7 @@ public class JokalariLista {
 		}	
 	}
 	
-	private static int getJokalariKop()
+	static int getJokalariKop()
 	{
 		return 4; //Teklatua.getInt();
 	}
@@ -66,4 +66,3 @@ public class JokalariLista {
 // iterator ez da erabili behar izan oraingoz
 // izena eta jokalari kopurua jokalaria editatu ahal izango ditu baina oraingoz ez  
 //try / catch erabili behar da 0 jokalari jarri ahal ez izateko eta 4 maximoa izateko
-
