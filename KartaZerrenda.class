@@ -1,26 +1,34 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class KartaZerrenda {
 	private ArrayList<Karta> kLista;
 
 	public KartaZerrenda() {
-		kLista = new ArrayList<>();
+		this.kLista = new ArrayList<>();
 	}
 
-	private Iterator<Karta> getIterador(){
+	public Iterator<Karta> getIterator() {
 		return this.kLista.iterator();
 	}
 
-	public Karta getpKarta() {
-		return this.pKarta;
+	public Karta getKarta(int pBota) {
+		return kLista.get(pBota);
 	}
 
-public void kenduKarta(Karta pKarta) {
-        if (kLista.contains(pKarta)) {
-            kLista.remove(pKarta);
-        } 
-}
+	public void kenduKarta(int pKarta) {
+		kLista.remove(pKarta);
+	}
 
-public void gehituKarta (Karta pKarta) {
-        if (kLista.contains(pKarta)) {
-            kLista.add(pKarta);
-        } 
+	public void gehituKarta(Karta pKarta) {
+		if (kLista.contains(pKarta)) {
+			kLista.add(pKarta);
+		}
+	}
+
+	public boolean berdina(Karta erdiko) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
