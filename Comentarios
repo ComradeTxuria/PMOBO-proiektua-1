@@ -1,1 +1,30 @@
-En JokalariLista hay que hacer una salbuespen para evitar que se creen 0 jugadores al incio de la partida. Y otro para que no se pasen de jugadores (creo).
+//JokalariLista//
+
+En JokalariLista hay que hacer una salbuespen para evitar que se creen 0 jugadores al incio de la partida. 
+Y otro para que no se pasen de jugadores (creo).
+
+//Jokalari//
+
+
+//Mazoa//
+
+
+//Mahaia//
+
+En mahaia se necesita una funcion publica que devuelva un booleano que mire a ver si esta vacia o no el ArrayList
+Si esta vacia devuelve true sino false
+Hay una funcion que aparece en el link que mira a ver si esta vacia una lista
+
+//KartaZerrenda//
+
+
+//Karta//
+
+
+//Normala//
+
+
+//Teklatua//
+
+
+//Printeatzea//
