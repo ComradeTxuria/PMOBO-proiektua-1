@@ -8,7 +8,7 @@ public class Karta {
 		this.kolore = pKolore;
 	}
 	
-	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
+	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las acciones que son!!
 		
 	}
 	
