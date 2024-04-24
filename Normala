@@ -6,7 +6,7 @@ public class Normala extends Karta {
 		super(pKolore);
 		this.zenbaki = pZenbaki;
 	}
-	public void eginAkzio() {
+	public void eginAkzio() { //TODO metodo hau falta da
 		
 		
 	}
