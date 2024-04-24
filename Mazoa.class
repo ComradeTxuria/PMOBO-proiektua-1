@@ -38,56 +38,37 @@ public class Mazoa
     mazoKartak.remove(0);
   }
 
-  public void kartaSortu()
-  {
-    //Horia
-    Karta h0 = new Karta;
-    h0.kolorea = "Horia";
-    h0.zenbakia = 0; 
-
-    while (i < 10)
-    {
-       Karta h = new Karta;
-       h.kolorea = "Horia";
-       h.zenbakia = i;
+  public void kartaSortu() {
+    
+    // Horia
+    for (int i = 0; i < 19; i++) {
+        Karta h = new Karta();
+        h.kolorea = "Horia";
+        h.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
     }
 
-    //Urdina 
-    Karta u0 = new Karta;
-    u0.kolorea = "Urdina";
-    u0.zenbakia = 0; 
-
-    while (i < 10)
-    {
-       Karta h = new Karta;
-       h.kolorea = "Urdina";
-       h.zenbakia = i;
+    // Urdina
+    for (int i = 0; i < 19; i++) {
+        Karta u = new Karta();
+        u.kolorea = "Urdina";
+        u.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
     }
 
-    //Gorria 
-    Karta g0 = new Karta;
-    g0.kolorea = "Gorria";
-    g0.zenbakia = 0; 
-
-    while (i < 10)
-    {
-       Karta h = new Karta;
-       h.kolorea = "Gorria";
-       h.zenbakia = i;
+    // Gorria
+    for (int i = 0; i < 19; i++) {
+        Karta g = new Karta();
+        g.kolorea = "Gorria";
+        g.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
     }
 
-    //Berdea 
-    Karta b0 = new Karta;
-    b0.kolorea = "Berdea";
-    b0.zenbakia = 0;
+    // Berdea
+    for (int i = 0; i < 19; i++) {
+        Karta b = new Karta();
+        b.kolorea = "Berdea";
+        b.zenbakia = (i % 10 == 0) ? 0 : (i % 10);
+    }
+}
 
-    while (i < 10)
-    {
-       Karta h = new Karta;
-       h.kolorea = "Berdea";
-       h.zenbakia = i;
-    }  
- }
 
 
 
