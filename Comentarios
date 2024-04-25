@@ -14,9 +14,10 @@ Y otro para que no se pasen de jugadores (creo).
 En mahaia se necesita una funcion publica que devuelva un booleano que mire a ver si esta vacia o no el ArrayList
 Si esta vacia devuelve true sino false
 Hay una funcion que aparece en el link que mira a ver si esta vacia una lista
+Esta funcion tiene que llamar a otra que estara en KartaZerrenda
 
 //KartaZerrenda//
-
+Es necesario una funcion que devuelva si la lista esta vacia o no con la funcion isEmpty()
 
 //Karta//
 
