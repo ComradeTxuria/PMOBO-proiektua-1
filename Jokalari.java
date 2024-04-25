@@ -55,7 +55,7 @@ public class Jokalari {
 	{
 		Mahaia.getMahaia().gehituKarta(pKarta);
 	}
-
+	
 }
 
 //zenbat adliz hartu daiteke kartak? 2
