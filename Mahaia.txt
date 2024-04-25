@@ -38,14 +38,20 @@ public class MahaiaTest {
     @Before
     public void setUp() {
         mahaia = Mahaia.getMahaia();
+        jokalari = new Jokalari(); // Crear una instancia de la clase Jokalari
     }
 
     @Test
     public void testGehituKarta() {
-        Karta karta = new Karta(); 
-        mahaia.gehituKarta(karta);
-        assertEquals(karta, mahaia.itzuliKarta());
+        Karta karta = new Karta(); // Karta bat sortzen dugu
+        mahaia.gehituKarta(karta); //Karta mahaura batzen dugu
+
+        // Jokalariak notatzen duen karta gordetzen dugu
+        Karta kartaBota = jokalari.kartaBota();
+
+        assertEquals(kartaBota, mahaia.itzuliKarta()); // kartaBota eta gehituKarta konparatzen dugu
     }
+}
 
     @Test
     public void testItzuliKarta() {
