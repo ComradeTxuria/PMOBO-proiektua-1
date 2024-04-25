@@ -1,6 +1,7 @@
 package UnoProiektua;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
+//import java.util.Iterator;
 
 public class JokalariLista {
 	//atributuak
@@ -43,22 +44,49 @@ public class JokalariLista {
 	//partida
 	public void jolastuPartida()
 	{
-		boolean JokoaAmaitu = false;
+		boolean jokoaAmaitu = false;
 		int i=0;
-		Jokalari jokalaria = null;
-		while (i<maxJok && JokoaAmaitu==false)
+		while (jokoaAmaitu==false)
 		{
+			Jokalari jokalaria = jLista.get(i);
 			jokalaria.jolastuTurnoa();
+			i++;
 			if (i==maxJok)
 			{
 				i=0;
 			}
+			jokoaAmaitu = Mazoa.getMazoa().jokoaAmaitua();
 		}	
 	}
 	
-	static int getJokalariKop()
+	//TODO karta gehiago gehitzean, jokalari limitea handitu
+	private static int getJokalariKop()
 	{
-		return 4; //Teklatua.getInt();
+		boolean ondo = false;
+		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
+		
+		
+		while(ondo==false) try
+			{
+				if(jokKop<4 || jokKop>2 )
+				{
+					ondo = true;
+				}
+				else
+				{
+					throw (new ZenbakiLimite(2, 4));
+				}
+			}
+			catch(ZenbakiLimite e)
+			{
+				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
+			}
+			catch(InputMismatchException e)
+			{
+				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
+			}
+		
+		return jokKop;
 	}
 }
 
