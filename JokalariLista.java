@@ -29,7 +29,16 @@ public class JokalariLista {
 		int i = 0;
 		while(i<maxJok)
 		{
-			Jokalari jokalaria = new Jokalari("izena");
+			String izena;
+			try
+			{
+				izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
+			}
+			catch (InputMismatchException e)
+			{
+				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
+			}
+			Jokalari jokalaria = new Jokalari(izena);
 			jLista.add(jokalaria);
 		}
 	}
@@ -55,7 +64,10 @@ public class JokalariLista {
 			{
 				i=0;
 			}
-			jokoaAmaitu = Mazoa.getMazoa().jokoaAmaitua();
+			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua())
+			{
+				jokoaAmaitu = true;
+			}
 		}	
 	}
 	
@@ -74,7 +86,7 @@ public class JokalariLista {
 				}
 				else
 				{
-					throw (new ZenbakiLimite(2, 4));
+					throw (new ZenbakiLimite());
 				}
 			}
 			catch(ZenbakiLimite e)
