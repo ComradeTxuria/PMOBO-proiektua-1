@@ -1,5 +1,7 @@
 package UnoProiektua;
 
+import java.util.ArrayList;
+
 public class Jokalari {
 	private String id;
 	private KartaZerrenda eskua;
@@ -8,25 +10,23 @@ public class Jokalari {
 	{
 		this.id = pId;
 		this.eskua = new KartaZerrenda();
+		for (int i=0; i<7; i++)
+		{
+			Karta k = kartaHartu();
+			eskua.gehituKarta(k);
+		}	
 	}
 	
 	
 	public void jolastuTurnoa()
 	{
+		int x = 0;
 		boolean jolastu = true;
-		while(jolastu == true)
+		while(jolastu == true & x<2)
 		{	
-			if(eskua==null)
-			{
-				for (int i=0; i<5; i++)
-				{
-					Karta k = kartaHartu();
-					eskua.gehituKarta(k);
-				}	
-			}
 			if(kartaBotaBai() == true)
 			{
-				int botatzeko = Teklatua.getTeklatua().getInt("Ipini mota nahi duzun karta");
+				int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta");
 				Karta bota = eskua.getKarta(botatzeko);
 				kartaEman(bota);
 				jolastu = false;
@@ -35,7 +35,8 @@ public class Jokalari {
 			{
 				kartaHartu();
 			}
-		}
+			x++;
+		}		
 	}
 	
 	private Karta kartaHartu()
@@ -46,14 +47,19 @@ public class Jokalari {
 	
 	private boolean kartaBotaBai()
 	{
-		Karta erdiko = Mahaia.getMahaia().itzuliKarta();
-		boolean bota = eskua.berdina(erdiko);
+		Karta gohiko = Mahaia.getMahaia().itzuliKarta();
+		boolean bota = eskua.berdina(gohiko);
 		return bota;
 	}
 	
 	private void kartaEman(Karta pKarta)
 	{
 		Mahaia.getMahaia().gehituKarta(pKarta);
+	}
+	
+	public boolean jokoaAmaitua() 
+	{
+		return eskua.utsa();
 	}
 	
 }
