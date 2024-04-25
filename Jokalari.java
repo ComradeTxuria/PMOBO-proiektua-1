@@ -1,6 +1,7 @@
 package UnoProiektua;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Jokalari {
 	private String id;
@@ -26,7 +27,7 @@ public class Jokalari {
 		{	
 			if(kartaBotaBai() == true)
 			{
-				int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta");
+				int botatzeko = botaKarta();
 				Karta bota = eskua.getKarta(botatzeko);
 				kartaEman(bota);
 				jolastu = false;
@@ -50,6 +51,31 @@ public class Jokalari {
 		Karta gohiko = Mahaia.getMahaia().itzuliKarta();
 		boolean bota = eskua.berdina(gohiko);
 		return bota;
+	}
+	
+	private int botaKarta()
+	{
+		int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta");
+		try
+		{
+			if(botatzeko<1 || botatzeko>eskua.kartaKop())
+			{
+				throw (new ZenbakiLimite());
+			}
+			else if(botaDaiteke(botatzeko) == false)
+			{
+				
+			}
+		}
+		catch(ZenbakiLimite e)
+		{
+			botatzeko = Teklatua.getTeklatua().getInt("Ezin duzu bota ez daukazun karta bat, ipini bota nahi duzun karta bat");
+		}
+		catch(InputMismatchException e)
+		{
+			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta ZENBAKI baten bidez adierazi behar duzu");
+		}
+		return botatzeko;
 	}
 	
 	private void kartaEman(Karta pKarta)
