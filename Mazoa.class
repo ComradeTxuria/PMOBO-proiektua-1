@@ -26,30 +26,50 @@ public class Mazoa {
 		// Horia
 
 			Karta h0 = new Normala(0, "Horia");
+			mazoKartak.add(h0)
 		for (int i = 1; i < 10; i++) {
 			Karta h = new Normala(i, "Horia");
+			mazoKartak.add(h)
 			Karta h2 = new Normala(i, "Horia");
+			nireMazoa.add(h2)
 		}
 
 		// Urdina
 			Karta u0 = new Normala(0, "Urdina");
+			mazoKartak.add(u0)
 		for (int i = 1; i < 10; i++) {
 			Karta u = new Normala(i, "Urdina");
+			mazoKartak.add(u)
 			Karta u2 = new Normala(i, "Urdina");
+			mazoKartak.add(u2)
 		}
 
 		// Gorria
 			Karta g0 = new Normala(0, "Gorria");
+			mazoKartak.add(g0)
 		for (int i = 1; i < 10; i++) {
 			Karta g = new Normala(i, "Gorria");
+			mazoKartak.add(g)
 			Karta g2 = new Normala(i, "Gorria");
+			mazoKartak.add(g2)
 		}
 
 		// Berdea
 			Karta b0 = new Normala(0, "Berdea");
+			mazoKartak.add(b0)
 		for (int i = 1; i < 10; i++) {
 			Karta b = new Normala(i, "Berdea");
+			mazoKartak.add(b)
 			Karta b2 = new Normala(i, "Berdea");
+			mazoKartak.add(b2)
+		}
+	}
+	
+	public boolean MazoHutsa() {
+		if (mazoKartak == null) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
