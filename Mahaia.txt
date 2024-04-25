@@ -25,3 +25,38 @@ public class Mahaia {
 
 	}
 }
+
+// JUnit
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class MahaiaTest {
+
+    private Mahaia mahaia;
+
+    @Before
+    public void setUp() {
+        mahaia = Mahaia.getMahaia();
+    }
+
+    @Test
+    public void testGehituKarta() {
+        Karta karta = new Karta(); 
+        mahaia.gehituKarta(karta);
+        assertEquals(karta, mahaia.itzuliKarta());
+    }
+
+    @Test
+    public void testItzuliKarta() {
+        // Asegurémonos de que no haya una carta inicialmente
+        assertNull(mahaia.itzuliKarta());
+
+        // Karta bat gehitu
+        Karta karta = new Karta();
+        mahaia.gehituKarta(karta);
+
+        // Ikusiko dugu batutako karta eta duguna berdina dela
+        assertEquals(karta, mahaia.itzuliKarta());
+    }
+}
