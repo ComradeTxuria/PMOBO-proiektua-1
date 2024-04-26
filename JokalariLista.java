@@ -7,7 +7,7 @@ public class JokalariLista {
 	//atributuak
 	private ArrayList<Jokalari> jLista;
 	private static JokalariLista nireJokalariLista = null;
-	private static int maxJok = getJokalariKop();
+	private int maxJok = getJokalariKop();
 	
 	//eraikitzailea eta singleton patroia
 	private JokalariLista()
@@ -22,6 +22,28 @@ public class JokalariLista {
 			nireJokalariLista = new JokalariLista();
 		}
 		return nireJokalariLista;
+	}
+	private Iterator<Jokalari> getIterator(){
+		return this.jLista.iterator();
+	}
+	
+	public void imprimatu() {
+		System.out.println("Jokalari lista");
+		Iterator<Jokalari> itr = getIterator();
+		Jokalari j = null;
+		while(itr.hasNext()) {
+			j = itr.next();
+			j.imprimatu();
+		}
+	}
+	
+	public void imprimatuKartak() {
+		Iterator<Jokalari> itr = getIterator();
+		Jokalari j = null;
+		while(itr.hasNext()) {
+			j = itr.next();
+			j.imprimatuKartak();
+		}
 	}
 	
 	private void gehituJok()
@@ -64,15 +86,17 @@ public class JokalariLista {
 			{
 				i=0;
 			}
-			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua())
+			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua()) //PORQUE DA ERROR
 			{
 				jokoaAmaitu = true;
 			}
 		}	
 	}
 	
+	//Hacer con itr
+	
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
-	private static int getJokalariKop()
+	public  int getJokalariKop()
 	{
 		boolean ondo = false;
 		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
