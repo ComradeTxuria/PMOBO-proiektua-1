@@ -24,8 +24,12 @@ public class Mahaia {
 		return k;
 
 	}
+	
+	public void imprimatuAzkena() {
+		mKarta.imprimatuAzkena();
+		
+	}
 }
-
 // JUnit
 import static org.junit.Assert.*;
 import org.junit.Before;
