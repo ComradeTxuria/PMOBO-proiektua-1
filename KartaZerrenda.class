@@ -27,7 +27,15 @@ public class KartaZerrenda {
 	}
 
 	public boolean berdina(Karta erdiko) {
-		// TODO Auto-generated method stub  PREGUNTAR PARA QUE SIRVE
+		Iterator<Karta> itr = getIterator();
+		Karta n = null;
+		boolean res = false;
+		while(itr.hasNext()||res == true) {
+			if(erdiko==n) {
+				res=true;
+			}
+			n = itr.next();
+		}
 		return false;
 	}
 	//itr
@@ -37,7 +45,7 @@ public class KartaZerrenda {
 		return kLista.size();
 	}
 
-	public boolean utsa() {
+	public boolean hutsa() {
 
 		boolean res = false;
 		if(kartaKop()==0){
