@@ -14,7 +14,7 @@ public class Teklatua {
 		this.sc = pSc;
 	}*/
 	
-	public static Teklatua getTeklatua() {
+	public static Teklatua getNireTeklatua() {
 		
 		if (nireTeklatua == null) {
 			nireTeklatua = new Teklatua();
@@ -23,15 +23,19 @@ public class Teklatua {
 	}
 	
 	public String getString(String pMezua) {
+		Printeatzea.getNirePrinteatzea().printTestua(pMezua);
 		String mezua = sc.nextLine();
 		return mezua;
 	}
 	
 	public int getInt(String pMezua) {
+		Printeatzea.getNirePrinteatzea().printTestua(pMezua);
 		int zenb = sc.nextInt();
 		sc.nextLine();
 		return zenb;
 	}
 }
+
+
 
 //Meter los cambios
