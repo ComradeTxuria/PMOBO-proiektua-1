@@ -24,8 +24,8 @@ public class Printeatzea {
 		
 	}
 	
-	public void printKarta() {
-		JokalariLista.getJokalariLista().imprimatuKartak();
+	public void printKarta(Jokalari pJokalaria) {
+		JokalariLista.getJokalariLista().imprimatuKartak(pJokalaria);
 	}		
 	
 	public void printMahaia() {
