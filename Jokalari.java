@@ -55,6 +55,22 @@ public class Jokalari {
 	
 	private Karta kartaHartu()
 	{
+		String hartu = Teklatua.getTeklatua().getString("Karta bat hartu espazioa sakatuz");
+		try
+		{
+			if (hartu != " ")
+			{
+				throw (new Okerra());
+			}
+		}
+		catch(Okerra e)
+		{
+			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ESPAZIOA sakatuz");
+		}
+		catch(InputMismatchException e)
+		{
+			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ESPAZIOA sakatuz");
+		}
 		Karta k = Mazoa.getMazoa().kartaEman();
 		return k;
 	}
@@ -62,7 +78,7 @@ public class Jokalari {
 	private boolean kartaBotaBai()
 	{
 		Karta gohiko = Mahaia.getMahaia().itzuliKarta();
-		boolean bota = eskua.berdina(gohiko);
+		boolean bota = eskua.botaKartak(gohiko);
 		return bota;
 	}
 	
@@ -100,8 +116,10 @@ public class Jokalari {
 	{
 		boolean bota = false;
 		Karta k = eskua.getKarta(pPos);
-		Karta p = Mahaia.getMahaia().itzuliKarta();
-		if()
+		if(Mahaia.getMahaia().botaBai(k)==true)
+		{
+			bota = true;
+		}
 		return bota;
 	}
 	
@@ -116,11 +134,3 @@ public class Jokalari {
 	}
 	
 }
-//zenbat adliz hartu daiteke kartak?
-//errore bat egotekotan ez dago amaitua
-//zergatik get txarto??
-//kartaBotaBai KartaZerrendan egin behar da
-//zenbat adliz hartu daiteke kartak? 2
-//errore bat egotekotan ez dago amaitua
-//zergatik get txarto??
-//kartaBotaBai KartaZerrendan egin behar da
