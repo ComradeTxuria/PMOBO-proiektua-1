@@ -112,11 +112,11 @@ public int setJokalariKop()
 			}
 			catch(ZenbakiLimite e)
 			{
-				jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
+				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
 			}
 			catch(InputMismatchException e)
 			{
-				jokKop = Teklatua.getNireTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
+				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
 		return jokKop;
 	}
