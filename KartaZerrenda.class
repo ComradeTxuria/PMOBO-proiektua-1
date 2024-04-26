@@ -22,24 +22,35 @@ public class KartaZerrenda {
 	}
 
 	public void gehituKarta(Karta pKarta) {
-		if (kLista.contains(pKarta)) {
-			kLista.add(pKarta);
-		}
+		kLista.add(pKarta);
 	}
 
-	public boolean berdina(Karta gohiko) {
+	public boolean botaKartak(Karta gohiko) {
 		Iterator<Karta> itr = getIterator();
-		Karta n = null;
-		boolean res = false;
-		while(itr.hasNext()||res == true) {
-			if(gohiko.kolore==n.kolore) {
-				res=true;
-			}
-			n = itr.next();
+		Karta k = null;
+		boolean aurkitu = false;
+		while(itr.hasNext() && aurkitu == false)
+		{
+			k = itr.next();
+			aurkitu = berdina(k,gohiko);
 		}
-		return false;
+		return aurkitu;
 	}
-	//itr
+
+	public boolean berdina(Karta k, Karta gohiko)
+	{
+		boolean berdina = false;
+		if(k instanceof Normala) //instanceof bere buruarekin???
+		{
+			berdina = k.komparatuZenb(gohiko);
+		}
+		else if(k.getKolore() == null)
+		{
+			berdina = true;
+		}
+		berdina = k.komparatuKolore(gohiko);
+		return berdina;
+	}
 
 	public int kartaKop() {
 
@@ -47,12 +58,7 @@ public class KartaZerrenda {
 	}
 
 	public boolean hutsa() {
-
-		boolean res = false;
-		if(kartaKop()==0){
-			res=true;
-		}
-		return res;
+		return kLista.isEmpty();
 	}
 
 	public void imprimatuKartak() {
