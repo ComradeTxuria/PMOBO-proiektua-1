@@ -79,7 +79,7 @@ public class JokalariLista {
 		while (jokoaAmaitu==false)
 		{
 			Jokalari jokalaria = jLista.get(i);
-			Printeatzea.getPrinteatzea().printeatuKartak(i);
+			Printeatzea.getNirePrinteatzea().printKarta(jokalaria);
 			jokalaria.jolastuTurnoa();
 			i++;
 			if (i==maxJok)
@@ -96,12 +96,16 @@ public class JokalariLista {
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
 public int setJokalariKop()
 	{
-		
+		boolean ondo = false;
 		int jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
 		
-		 try
+		 while(ondo==false) try
 			{
-				if(jokKop>4 || jokKop<2 )
+				if(jokKop<4 || jokKop>2 )
+				{
+					ondo = true;
+				}
+				else
 				{
 					throw (new ZenbakiLimite());
 				}
@@ -118,7 +122,3 @@ public int setJokalariKop()
 	}
 }
 
-// jokoa nola amaitu??? atributo batekin egin??? funtzio batekin whilean???
-// iterator ez da erabili behar izan oraingoz
-// izena eta jokalari kopurua jokalaria editatu ahal izango ditu baina oraingoz ez  
-//try / catch erabili behar da 0 jokalari jarri ahal ez izateko eta 4 maximoa izateko
