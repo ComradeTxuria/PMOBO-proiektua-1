@@ -5,6 +5,7 @@ public class Mazoa {
 
 	private Mazoa() {
 		this.mazoKartak = new KartaZerrenda();
+		kartaSortu();
 	}
 
 	public static Mazoa getMazoa() {
@@ -64,14 +65,6 @@ public class Mazoa {
 			mazoKartak.gehituKarta(b2);
 		}
 	}
-
-	public boolean MazoHutsa() {
-		if (mazoKartak == null) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 	
 	public void bararageatu(){
 		mazoKartak.barageatu();
@@ -82,7 +75,7 @@ public class Mazoa {
 	 * this.mazoKartak.add(pKarta); }
 	 */
 
-	public boolean jokoaAmaitua() {
+	public boolean MazoHutsa() {
 		return mazoKartak.hutsa();
 	}
 
