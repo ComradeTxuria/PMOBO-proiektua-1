@@ -10,9 +10,20 @@ public class Normala extends Karta {
 		super.imprimatu();
 		System.out.println("ZENBAKI: "+zenbaki);
 	}
-	public void eginAkzio() {
-		
-		
+	public int getZenb()
+	{
+		return this.zenbaki;
 	}
-
+	
+	
+	public boolean komparatuZenb(Karta pKarta)
+	{
+		boolean berdina = false;
+		int zenb = pKarta.getZenb();
+		if (this.zenbaki == zenb)
+		{
+			berdina = true;
+		}
+		return berdina;
+	}
 }
