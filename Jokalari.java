@@ -18,7 +18,14 @@ public class Jokalari {
 		}	
 	}
 	
+	public void imprimatu() {
+		System.out.println("ID: " +id);
+	}
 	
+	public void imprimatuKartak() {
+		imprimatu();
+		eskua.imprimatuKartak();
+	}
 	public void jolastuTurnoa()
 	{
 		int x = 0;
@@ -90,6 +97,10 @@ public class Jokalari {
 	
 }
 
+//zenbat adliz hartu daiteke kartak?
+//errore bat egotekotan ez dago amaitua
+//zergatik get txarto??
+//kartaBotaBai KartaZerrendan egin behar da
 //zenbat adliz hartu daiteke kartak? 2
 //errore bat egotekotan ez dago amaitua
 //zergatik get txarto??
