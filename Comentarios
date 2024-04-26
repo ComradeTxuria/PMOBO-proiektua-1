@@ -28,7 +28,6 @@ Es necesario una funcion que devuelva si la lista esta vacia o no con la funcion
 
 
 //Printeatzea//
-Printeatzea tiene que ser un singleton
 Se necesita una funcion que printee el menu, eta funcion se le llama desde JokalariZerrenda y recibe la posicion 
 en donde esta el jugador que esta jugando. 
 Yo haria un menu tal que asi:
