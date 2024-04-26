@@ -15,6 +15,7 @@ public class JokalariLista {
 		this.jLista = new ArrayList<Jokalari>();
 		gehituJok();
 	}
+	
 	public static JokalariLista getJokalariLista() 
 	{
 		if(nireJokalariLista==null)
@@ -23,6 +24,28 @@ public class JokalariLista {
 		}
 		return nireJokalariLista;
 	}
+	
+	
+	private void gehituJok()
+	{
+		int i = 0;
+		while(i<maxJok)
+		{
+			String izena;
+			try
+			{
+				izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
+			}
+			catch (InputMismatchException e)
+			{
+				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
+			}
+			Jokalari jokalaria = new Jokalari(izena);
+			jLista.add(jokalaria);
+		}
+	}
+	
+	
 	private Iterator<Jokalari> getIterator(){
 		return this.jLista.iterator();
 	}
@@ -46,61 +69,34 @@ public class JokalariLista {
 		}
 	}
 	
-	private void gehituJok()
-	{
-		int i = 0;
-		while(i<maxJok)
-		{
-			String izena;
-			try
-			{
-				izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
-			}
-			catch (InputMismatchException e)
-			{
-				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
-			}
-			Jokalari jokalaria = new Jokalari(izena);
-			jLista.add(jokalaria);
-		}
-	}
-	
-	
-	//iterator
-	/*private Iterator<Jokalari> getIterator()
-	{
-		return this.jLista.iterator();
-	}*/
 	
 	//partida
 	public void jolastuPartida()
 	{
-		boolean jokoaAmaitu = false;
+		boolean jokoaAmaitu;
 		int i=0;
 		while (jokoaAmaitu==false)
 		{
 			Jokalari jokalaria = jLista.get(i);
+			Printeatzea.getPrinteatzea().printeatuKartak(i);
 			jokalaria.jolastuTurnoa();
 			i++;
 			if (i==maxJok)
 			{
 				i=0;
 			}
-			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua()) //PORQUE DA ERROR
+			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua())
 			{
 				jokoaAmaitu = true;
 			}
 		}	
 	}
 	
-	//Hacer con itr
-	
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
-	public  int getJokalariKop()
+	private int getJokalariKop()
 	{
 		boolean ondo = false;
 		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
-		
 		
 		while(ondo==false) try
 			{
@@ -121,7 +117,6 @@ public class JokalariLista {
 			{
 				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
-		
 		return jokKop;
 	}
 }
