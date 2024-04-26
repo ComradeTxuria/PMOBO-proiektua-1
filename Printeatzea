@@ -1,3 +1,4 @@
+
 public class Printeatzea {
 	private static Printeatzea nirePrinteatzea= null;
 
@@ -24,13 +25,16 @@ public class Printeatzea {
 		
 	}
 	
-	public void printKarta(Jokalari pJokalaria) {
-		JokalariLista.getJokalariLista().imprimatuKartak(pJokalaria);
+	public void printKarta(Jokalari pJokalari) {
+		JokalariLista.getJokalariLista().imprimatuKartak(pJokalari);
 	}		
 	
 	public void printMahaia() {
 		Mahaia.getMahaia().imprimatuAzkena();
 	}
+	
+	public void printTestua(String pMezua) {
+		System.out.println(pMezua);
+	}
 
 	
-}
