@@ -1,7 +1,6 @@
 package Mahaia;
 public class Mahaia {
 	private static Mahaia NireMahaia;
-	private Mahaia Mahaia;
 	private KartaZerrenda mKarta;
 
 	private Mahaia() {
@@ -24,7 +23,13 @@ public class Mahaia {
 		return k;
 
 	}
-	
+
+	public boolean botaBai(Karta pKarta)
+	{
+		boolean bota = mKarta.berdina(pKarta, mKarta.getKarta(0));
+		return bota;
+	}
+
 	public void imprimatuAzkena() {
 		mKarta.imprimatuAzkena();
 		
