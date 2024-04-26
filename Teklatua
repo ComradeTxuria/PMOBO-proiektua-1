@@ -29,6 +29,7 @@ public class Teklatua {
 	
 	public int getInt(String pMezua) {
 		int zenb = sc.nextInt();
+		sc.nextLine();
 		return zenb;
 	}
 }
