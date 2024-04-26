@@ -18,14 +18,14 @@ public class Jokalari {
 		}	
 	}
 	
-	/*public void imprimatu() {
+	public void imprimatu() {
 		System.out.println("ID: " +id);
-	}*/
+	}
 	
-	public String getId()
+	/*public String getId()
 	{
 		return this.id;
-	}
+	}*/
 	
 	public void imprimatuKartak() {
 		imprimatu();
