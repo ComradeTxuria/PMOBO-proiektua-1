@@ -1,6 +1,5 @@
 package UnoProiektua;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class Jokalari {
@@ -22,11 +21,6 @@ public class Jokalari {
 		System.out.println("ID: " +id);
 	}
 	
-	/*public String getId()
-	{
-		return this.id;
-	}*/
-	
 	public void imprimatuKartak() {
 		imprimatu();
 		eskua.imprimatuKartak();
@@ -41,8 +35,7 @@ public class Jokalari {
 			if(kartaBotaBai() == true)
 			{
 				int botatzeko = botaKarta();
-				Karta bota = eskua.getKarta(botatzeko);
-				kartaEman(bota);
+				kartaEman(botatzeko);
 				jolastu = false;
 			}
 			else
@@ -56,11 +49,16 @@ public class Jokalari {
 	private Karta kartaHartu()
 	{
 		String hartu = Teklatua.getTeklatua().getString("Karta bat hartu espazioa sakatuz");
-		try
+		boolean ondo = false;
+		while (ondo == false) try
 		{
 			if (hartu != " ")
 			{
 				throw (new Okerra());
+			}
+			else
+			{
+				ondo = true;
 			}
 		}
 		catch(Okerra e)
@@ -85,7 +83,8 @@ public class Jokalari {
 	private int botaKarta()
 	{
 		int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta");
-		try
+		boolean ondo = false;
+		while(ondo == false) try
 		{
 			if(botatzeko<1 || botatzeko>eskua.kartaKop())
 			{
@@ -94,6 +93,10 @@ public class Jokalari {
 			else if(botaDaiteke(botatzeko) == false)
 			{
 				throw (new KartaOkerra());
+			}
+			else
+			{
+				ondo = true;
 			}
 		}
 		catch(ZenbakiLimite e)
@@ -116,16 +119,15 @@ public class Jokalari {
 	{
 		boolean bota = false;
 		Karta k = eskua.getKarta(pPos);
-		if(Mahaia.getMahaia().botaBai(k)==true)
-		{
-			bota = true;
-		}
+		bota = Mahaia.getMahaia().botaBai(k);
 		return bota;
 	}
 	
 	private void kartaEman(Karta pKarta)
 	{
-		Mahaia.getMahaia().gehituKarta(pKarta);
+		Karta bota = eskua.getKarta(pKarta);
+		Mahaia.getMahaia().gehituKarta(bota);
+		eskua.kenduKarta(pKarta);
 	}
 	
 	public boolean jokoaAmaitua() 
