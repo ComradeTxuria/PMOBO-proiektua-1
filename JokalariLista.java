@@ -60,14 +60,15 @@ public class JokalariLista {
 		}
 	}
 	
-	public void imprimatuKartak() {
-		Iterator<Jokalari> itr = getIterator();
+	public void imprimatuKartak(Jokalari pJokalari) {
+		/*Iterator<Jokalari> itr = getIterator();
 		Jokalari j = null;
 		while(itr.hasNext()) {
 			j = itr.next();
-			j.imprimatuKartak();
-		}
-	}
+			j.imprimatuKartak();   //Iterando
+		}*/
+		Jokalari j = pJokalari;
+		j.imprimatuKartak();
 	
 	
 	//partida
