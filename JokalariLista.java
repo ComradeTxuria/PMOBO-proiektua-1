@@ -7,7 +7,7 @@ public class JokalariLista {
 	//atributuak
 	private ArrayList<Jokalari> jLista;
 	private static JokalariLista nireJokalariLista = null;
-	private int maxJok = getJokalariKop();
+	private int maxJok = setJokalariKop();
 	
 	//eraikitzailea eta singleton patroia
 	private JokalariLista()
@@ -94,29 +94,25 @@ public class JokalariLista {
 	}
 	
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
-	private int getJokalariKop()
+public int setJokalariKop()
 	{
-		boolean ondo = false;
-		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
 		
-		while(ondo==false) try
+		int jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
+		
+		 try
 			{
-				if(jokKop<4 || jokKop>2 )
-				{
-					ondo = true;
-				}
-				else
+				if(jokKop>4 || jokKop<2 )
 				{
 					throw (new ZenbakiLimite());
 				}
 			}
 			catch(ZenbakiLimite e)
 			{
-				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
+				jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
 			}
 			catch(InputMismatchException e)
 			{
-				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
+				jokKop = Teklatua.getNireTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
 		return jokKop;
 	}
