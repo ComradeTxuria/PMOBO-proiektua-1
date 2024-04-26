@@ -18,14 +18,20 @@ public class Jokalari {
 		}	
 	}
 	
-	public void imprimatu() {
+	/*public void imprimatu() {
 		System.out.println("ID: " +id);
+	}*/
+	
+	public String getId()
+	{
+		return this.id;
 	}
 	
 	public void imprimatuKartak() {
 		imprimatu();
 		eskua.imprimatuKartak();
 	}
+	
 	public void jolastuTurnoa()
 	{
 		int x = 0;
@@ -71,18 +77,32 @@ public class Jokalari {
 			}
 			else if(botaDaiteke(botatzeko) == false)
 			{
-				
+				throw (new KartaOkerra());
 			}
 		}
 		catch(ZenbakiLimite e)
 		{
 			botatzeko = Teklatua.getTeklatua().getInt("Ezin duzu bota ez daukazun karta bat, ipini bota nahi duzun karta bat");
 		}
+		catch(KartaOkerra e)
+		{
+			botatzeko = Teklatua.getTeklatua().getInt("Ezin duzu karta hori bota, ipini bota ahal duzun karta bat");
+		}
 		catch(InputMismatchException e)
 		{
 			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta ZENBAKI baten bidez adierazi behar duzu");
 		}
 		return botatzeko;
+	}
+	
+	
+	private boolean botaDaiteke(int pPos)
+	{
+		boolean bota = false;
+		Karta k = eskua.getKarta(pPos);
+		Karta p = Mahaia.getMahaia().itzuliKarta();
+		if()
+		return bota;
 	}
 	
 	private void kartaEman(Karta pKarta)
@@ -92,11 +112,10 @@ public class Jokalari {
 	
 	public boolean jokoaAmaitua() 
 	{
-		return eskua.utsa();
+		return eskua.hutsa();
 	}
 	
 }
-
 //zenbat adliz hartu daiteke kartak?
 //errore bat egotekotan ez dago amaitua
 //zergatik get txarto??
