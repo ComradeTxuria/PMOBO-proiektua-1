@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collections;
 
 public class KartaZerrenda {
 	private ArrayList<Karta> kLista;
@@ -26,12 +27,12 @@ public class KartaZerrenda {
 		}
 	}
 
-	public boolean berdina(Karta erdiko) {
+	public boolean berdina(Karta gohiko) {
 		Iterator<Karta> itr = getIterator();
 		Karta n = null;
 		boolean res = false;
 		while(itr.hasNext()||res == true) {
-			if(erdiko==n) {
+			if(gohiko.kolore==n.kolore) {
 				res=true;
 			}
 			n = itr.next();
@@ -65,5 +66,9 @@ public class KartaZerrenda {
 	
 	public void imprimatuAzkena() {
 		kLista.get(kLista.size()-1).imprimatu();
+	}
+	
+	public void barageatu() {
+		Collections.shuffle(kLista);
 	}
 }
