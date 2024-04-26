@@ -1,54 +1,36 @@
 public class Printeatzea {
-	
-	public Printeatzea() {
+	private static Printeatzea nirePrinteatzea= null;
+
+	private Printeatzea() {
 		
 	}
 	
+	public static Printeatzea getNirePrinteatzea() {
+		if(nirePrinteatzea == null) {
+			nirePrinteatzea = new Printeatzea();
+		}
+		return nirePrinteatzea;
+	}
+
 	public void printMenua() {
-		
 		System.out.println(" _     _      ____       _  ____  _  __ ____  ____ \r\n"
 				+ "/ \\ /\\/ \\  /|/  _ \\     / |/  _ \\/ |/ //  _ \\/  _ \\\r\n"
 				+ "| | ||| |\\ ||| / \\|     | || / \\||   / | / \\|| / \\|\r\n"
 				+ "| \\_/|| | \\||| \\_/|  /\\_| || \\_/||   \\ | \\_/|| |-||\r\n"
 				+ "\\____/\\_/  \\|\\____/  \\____/\\____/\\_|\\_\\\\____/\\_/ \\|");
 		
+		System.out.println("Jokalari kopurua: "+JokalariLista.getJokalariLista().getJokalariKop());
+		JokalariLista.getJokalariLista().imprimatu();
+		
+	}
+	
+	public void printKarta() {
+		JokalariLista.getJokalariLista().imprimatuKartak();
+	}		
+	
+	public void printMahaia() {
+		Mahaia.getMahaia().imprimatuAzkena();
 	}
 
-	private void printKarta() {
-		
-		
-	}
+	
 }
-
-
-
-		/*
-		int n = 1;
-		 int jokalariKop = 0;
-		try {
-		System.out.println("Sartu jokalari kopurua mesedez:");
-		jokalariKop = JokalariLista.getJokalariKop();
-		if (jokalariKop <= 0) {
-			throw new JokalariException();
-		}
-		
-			
-		}catch(JokalariException salbu) {			
-			
-		}
-		
-		*/
-		/*
-		while (jokalariKop<=0) {
-			
-			System.out.println("Sartu jokalari kopurua mesedez:");
-			jokalariKop = JokalariLista.getJokalariKop();
-		}
-		while (jokalariKop!=0) {
-			
-			jokalariKop = jokalariKop-1;
-			Jokalari jok = new Jokalari(null);
-			
-			n = n+1;
-		}
-		*/
