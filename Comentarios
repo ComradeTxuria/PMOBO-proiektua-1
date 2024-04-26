@@ -1,22 +1,17 @@
 //JokalariLista//
 
-En JokalariLista hay que hacer una salbuespen para evitar que se creen 0 jugadores al incio de la partida. 
-Y otro para que no se pasen de jugadores (creo).
 
 //Jokalari//
 
 
 //Mazoa//
-En mahaia se necesita una funcion publica que devuelva un booleano que mire a ver si esta vacia o no el ArrayList
-Si esta vacia devuelve true sino false
-Hay una funcion que aparece en el link que mira a ver si esta vacia una lista
-Esta funcion tiene que llamar a otra que estara en KartaZerrenda
+
 
 //Mahaia//
 
 
 //KartaZerrenda//
-Es necesario una funcion que devuelva si la lista esta vacia o no con la funcion isEmpty()
+
 
 //Karta//
 
@@ -28,7 +23,7 @@ Es necesario una funcion que devuelva si la lista esta vacia o no con la funcion
 
 
 //Printeatzea//
-Se necesita una funcion que printee el menu, eta funcion se le llama desde JokalariZerrenda y recibe la posicion 
+Se necesita una funcion que printee la interfaz, eta funcion se le llama desde JokalariZerrenda y recibe la posicion 
 en donde esta el jugador que esta jugando. 
 Yo haria un menu tal que asi:
 
@@ -37,3 +32,4 @@ Yo haria un menu tal que asi:
 2. (color) (numero)                                               2.(nombre de jugador) (numero de cartas)
 ...                                                               ...
 Los jugadores tendrian que aparecer en orden de turno
+Esto hay que acabarlo aunque esta casi acabado menos beste jokalariak
