@@ -6,7 +6,11 @@ public class Normala extends Karta {
 		super(pKolore);
 		this.zenbaki = pZenbaki;
 	}
-	public void eginAkzio() { //TODO metodo hau falta da
+	public void imprimatu() {
+		super.imprimatu();
+		System.out.println("ZENBAKI: "+zenbaki);
+	}
+	public void eginAkzio() {
 		
 		
 	}
