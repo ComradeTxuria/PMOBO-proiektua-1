@@ -36,7 +36,7 @@ public class KartaZerrenda {
 		}
 		return aurkitu;
 	}
-
+	
 	public boolean berdina(Karta k, Karta gohiko)
 	{
 		boolean berdina = false;
@@ -51,7 +51,6 @@ public class KartaZerrenda {
 		berdina = k.komparatuKolore(gohiko);
 		return berdina;
 	}
-
 	public int kartaKop() {
 
 		return kLista.size();
@@ -71,6 +70,8 @@ public class KartaZerrenda {
 	}
 	
 	public void imprimatuAzkena() {
+		System.out.println("Erdiko karta: "
+				+ "");
 		kLista.get(kLista.size()-1).imprimatu();
 	}
 	
