@@ -35,11 +35,11 @@ public class JokalariLista {
 			String izena;
 			/*try
 			{*/
-			izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
+			izena = Teklatua.getNireTeklatua().getString("Idatzi jokalariaren izena.");
 			/*}
 			catch (InputMismatchException e)
 			{
-				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
+				izena = Teklatua.getNireTeklatua().getString("Idatzi ZUZENA den izen bat.");
 			}*/
 			Jokalari jokalaria = new Jokalari(izena);
 			jLista.add(jokalaria);
@@ -100,7 +100,7 @@ public class JokalariLista {
 	public int setJokalariKop()
 	{
 		boolean ondo = false;
-		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
+		int jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
 		
 		while(ondo==false) try
 			{
@@ -115,11 +115,11 @@ public class JokalariLista {
 			}
 			catch(ZenbakiLimite e)
 			{
-				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
+				jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
 			}
 			catch(InputMismatchException e) //errorea nola kendu gainetik???
 			{
-				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
+				jokKop = Teklatua.getNireTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
 		return jokKop;
 	}
