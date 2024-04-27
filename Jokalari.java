@@ -12,7 +12,7 @@ public class Jokalari {
 		this.eskua = new KartaZerrenda();
 		for (int i=0; i<7; i++)
 		{
-			Karta k = kartaHartu();
+			Karta k = Mazoa.getMazoa().kartaEman();
 			eskua.gehituKarta(k);
 		}	
 	}
@@ -20,6 +20,8 @@ public class Jokalari {
 	public void imprimatu() {
 		System.out.println("ID: " +id);
 	}
+	
+
 	
 	public void imprimatuKartak() {
 		imprimatu();
@@ -109,8 +111,9 @@ public class Jokalari {
 		}
 		catch(InputMismatchException e)
 		{
-			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta ZENBAKI baten bidez adierazi behar duzu");
+			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta, ZENBAKI baten bidez adierazi behar duzu");
 		}
+		botatzeko = botatzeko-1;
 		return botatzeko;
 	}
 	
@@ -123,7 +126,7 @@ public class Jokalari {
 		return bota;
 	}
 	
-	private void kartaEman(Karta pKarta)
+	private void kartaEman(int pKarta)
 	{
 		Karta bota = eskua.getKarta(pKarta);
 		Mahaia.getMahaia().gehituKarta(bota);
