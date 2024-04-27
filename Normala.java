@@ -10,6 +10,7 @@ public class Normala extends Karta {
 		super.imprimatu();
 		System.out.println("ZENBAKI: "+zenbaki);
 	}
+	
 	public int getZenb()
 	{
 		return this.zenbaki;
@@ -26,4 +27,5 @@ public class Normala extends Karta {
 		}
 		return berdina;
 	}
+
 }
