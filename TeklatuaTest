@@ -1,0 +1,39 @@
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TeklatuaTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testGetNireTeklatua() {
+		//fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetString() {
+		System.out.println("Sartu izena");
+		assertEquals(Teklatua.getNireTeklatua().getString(" "), "Juan");
+		System.out.println("OTRO");
+		assertEquals(Teklatua.getNireTeklatua().getString(" "),"Holi");
+	}
+
+	@Test
+	public void testGetInt() {
+		System.out.println("Sartu zenbakia");
+		assertEquals(Teklatua.getNireTeklatua().getInt(" "), 23);
+		System.out.println("Beste bat");
+		assertEquals(Teklatua.getNireTeklatua().getInt(" "), 50);
+	}
+
+}
