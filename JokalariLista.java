@@ -7,12 +7,13 @@ public class JokalariLista {
 	//atributuak
 	private ArrayList<Jokalari> jLista;
 	private static JokalariLista nireJokalariLista = null;
-	private int maxJok = setJokalariKop();
+	private int maxJok;
 	
 	//eraikitzailea eta singleton patroia
 	private JokalariLista()
 	{
 		this.jLista = new ArrayList<Jokalari>();
+		this.maxJok =  setJokalariKop();
 		gehituJok();
 	}
 	
@@ -32,16 +33,17 @@ public class JokalariLista {
 		while(i<maxJok)
 		{
 			String izena;
-			try
-			{
-				izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
-			}
+			/*try
+			{*/
+			izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
+			/*}
 			catch (InputMismatchException e)
 			{
 				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
-			}
+			}*/
 			Jokalari jokalaria = new Jokalari(izena);
 			jLista.add(jokalaria);
+			i++;
 		}
 	}
 	
@@ -65,16 +67,17 @@ public class JokalariLista {
 		Jokalari j = null;
 		while(itr.hasNext()) {
 			j = itr.next();
-			j.imprimatuKartak();   //Iterando
+			j.imprimatuKartak();
 		}*/
 		Jokalari j = pJokalari;
 		j.imprimatuKartak();
+	}
 	
 	
 	//partida
 	public void jolastuPartida()
 	{
-		boolean jokoaAmaitu;
+		boolean jokoaAmaitu = false;
 		int i=0;
 		while (jokoaAmaitu==false)
 		{
@@ -94,27 +97,27 @@ public class JokalariLista {
 	}
 	
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
-public int setJokalariKop()
+	public int setJokalariKop()
 	{
 		boolean ondo = false;
-		int jokKop = Teklatua.getNireTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
+		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
 		
-		 while(ondo==false) try
+		while(ondo==false) try
 			{
-				if(jokKop<4 || jokKop>2 )
+				if(jokKop>4 || jokKop<2 )
 				{
-					ondo = true;
+					throw (new ZenbakiLimite());
 				}
 				else
 				{
-					throw (new ZenbakiLimite());
+					ondo = true;
 				}
 			}
 			catch(ZenbakiLimite e)
 			{
 				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
 			}
-			catch(InputMismatchException e)
+			catch(InputMismatchException e) //errorea nola kendu gainetik???
 			{
 				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
