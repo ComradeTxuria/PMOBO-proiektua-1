@@ -6,12 +6,15 @@ public class Karta {
 	public Karta(String pKolore) {
 		this.kolore = pKolore;
 	}
+	
 	public void imprimatu() {
 		System.out.println("KOLOREA: "+kolore);
 	}
+	
 	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
 		 
 	}
+	
 	public String getKolore()
 	{
 		return this.kolore;
@@ -30,4 +33,5 @@ public class Karta {
 		}
 		return berdina;
 	}
+	
 }
