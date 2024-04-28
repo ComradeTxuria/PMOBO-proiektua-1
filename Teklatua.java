@@ -14,7 +14,7 @@ public class Teklatua {
 		this.sc = pSc;
 	}*/
 	
-	public static Teklatua getNireTeklatua() {
+	public static Teklatua getTeklatua() {
 		
 		if (nireTeklatua == null) {
 			nireTeklatua = new Teklatua();
