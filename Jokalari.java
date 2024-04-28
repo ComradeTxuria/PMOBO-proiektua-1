@@ -43,6 +43,12 @@ public class Jokalari {
 			else
 			{
 				kartaHartu();
+				if(kartaBotaBai() == true)
+				{
+					int botatzeko = botaKarta();
+					kartaEman(botatzeko);
+					jolastu = false;
+				}
 			}
 			x++;
 		}		
