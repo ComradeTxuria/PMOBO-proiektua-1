@@ -48,9 +48,13 @@ public class KartaZerrenda {
 		{
 			berdina = true;
 		}
-		berdina = k.komparatuKolore(gohiko);
+		if(berdina == false)
+		{
+			berdina = k.komparatuKolore(gohiko);
+		}
 		return berdina;
 	}
+	
 	public int kartaKop() {
 
 		return kLista.size();
