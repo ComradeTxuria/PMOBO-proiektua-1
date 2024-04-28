@@ -8,7 +8,7 @@ public class Karta {
 	}
 	
 	public void imprimatu() {
-		System.out.println("KOLOREA: "+kolore);
+		//System.out.println("KOLOREA: "+kolore);
 	}
 	
 	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
