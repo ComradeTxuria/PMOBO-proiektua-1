@@ -11,7 +11,8 @@
 
 
 //KartaZerrenda//
-
+Estaria bien hacer una funcion para ordenar la mano del jugador segun color y numero, hay una funcion que ordena ArrayLists segun un parametro
+yo ordenaria primero segun numero y luego otra vez segun color, ns si funcionaria pero puede que si
 
 //Karta//
 
@@ -33,3 +34,5 @@ Yo haria un menu tal que asi:
 ...                                                               ...
 Los jugadores tendrian que aparecer en orden de turno
 Esto hay que acabarlo aunque esta casi acabado menos beste jokalariak
+
+Hay que poner algo para cuando se acaba el juego
