@@ -48,13 +48,13 @@ public class Jokalari {
 		}		
 	}
 	
-	private Karta kartaHartu()
+	private void kartaHartu()
 	{
-		String hartu = Teklatua.getTeklatua().getString("Karta bat hartu espazioa sakatuz");
+		String hartu = Teklatua.getTeklatua().getString("Karta bat hartu enter sakatuz");
 		boolean ondo = false;
 		while (ondo == false) try
 		{
-			if (hartu != " ")
+			if (!hartu.equals(""))
 			{
 				throw (new Okerra());
 			}
@@ -65,14 +65,14 @@ public class Jokalari {
 		}
 		catch(Okerra e)
 		{
-			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ESPAZIOA sakatuz");
+			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ENTER sakatuz");
 		}
 		catch(InputMismatchException e)
 		{
-			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ESPAZIOA sakatuz");
+			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ENTER sakatuz");
 		}
 		Karta k = Mazoa.getMazoa().kartaEman();
-		return k;
+		eskua.gehituKarta(k);
 	}
 	
 	private boolean kartaBotaBai()
@@ -84,11 +84,11 @@ public class Jokalari {
 	
 	private int botaKarta()
 	{
-		int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta");
+		int botatzeko = Teklatua.getTeklatua().getInt("Ipini bota nahi duzun karta")-1;
 		boolean ondo = false;
 		while(ondo == false) try
 		{
-			if(botatzeko<1 || botatzeko>eskua.kartaKop())
+			if(botatzeko<0 || botatzeko>eskua.kartaKop()-1)
 			{
 				throw (new ZenbakiLimite());
 			}
@@ -113,7 +113,6 @@ public class Jokalari {
 		{
 			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta, ZENBAKI baten bidez adierazi behar duzu");
 		}
-		botatzeko = botatzeko-1;
 		return botatzeko;
 	}
 	
