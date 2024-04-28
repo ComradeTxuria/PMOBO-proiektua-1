@@ -8,7 +8,7 @@ public class Normala extends Karta {
 	}
 	public void imprimatu() {
 		super.imprimatu();
-		System.out.println("ZENBAKI: "+zenbaki);
+		System.out.println("ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
 	}
 	
 	public int getZenb()
