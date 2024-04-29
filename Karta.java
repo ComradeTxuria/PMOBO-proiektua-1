@@ -7,13 +7,13 @@ public class Karta {
 		this.kolore = pKolore;
 	}
 	
-	public void imprimatu() {
+	public void imprimatu(int pPos) {
 		//System.out.println("KOLOREA: "+kolore);
 	}
 	
-	protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
+	/*protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
 		 
-	}
+	}*/
 	
 	public String getKolore()
 	{
