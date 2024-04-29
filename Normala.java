@@ -6,9 +6,15 @@ public class Normala extends Karta {
 		super(pKolore);
 		this.zenbaki = pZenbaki;
 	}
-	public void imprimatu() {
-		super.imprimatu();
-		System.out.println("ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
+	public void imprimatu(int pPos) {
+		super.imprimatu(pPos);
+		if (pPos == -1){
+			System.out.println(" ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
+		}
+		else 
+		{
+			System.out.println(pPos + " ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
+		}
 	}
 	
 	public int getZenb()
