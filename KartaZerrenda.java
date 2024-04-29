@@ -65,18 +65,20 @@ public class KartaZerrenda {
 	}
 
 	public void imprimatuKartak() {
+		int i = 0;
 		Iterator<Karta> itr = getIterator();
 		Karta k = null;
 		while(itr.hasNext()) {
 			k = itr.next();
-			k.imprimatu();
+			i++;
+			k.imprimatu(i);
 		}
 	}
 	
 	public void imprimatuAzkena() {
 		System.out.println("Erdiko karta: "
 				+ "");
-		kLista.get(kLista.size()-1).imprimatu();
+		kLista.get(kLista.size()-1).imprimatu(-1);
 	}
 	
 	public void barageatu() {
