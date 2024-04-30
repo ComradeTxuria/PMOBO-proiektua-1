@@ -8,13 +8,12 @@ public class Karta {
 	}
 	
 	public void imprimatu(int pPos) {
-		//System.out.println("KOLOREA: "+kolore);
 	}
 	
-	/*protected void eginAkzio() { //TODO Tenemos que hacerlo cuando sepamos las que acciones son!!
-		 
-	}*/
-	
+	protected void eginAkzio() 
+	{ 
+	}
+
 	public String getKolore()
 	{
 		return this.kolore;
