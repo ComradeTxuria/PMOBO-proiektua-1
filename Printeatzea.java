@@ -19,11 +19,18 @@ public class Printeatzea {
 				+ "| | ||| |\\ ||| / \\|     | || / \\||   / | / \\|| / \\|\r\n"
 				+ "| \\_/|| | \\||| \\_/|  /\\_| || \\_/||   \\ | \\_/|| |-||\r\n"
 				+ "\\____/\\_/  \\|\\____/  \\____/\\____/\\_|\\_\\\\____/\\_/ \\|");
+		
+		//System.out.println("Jokalari kopurua: "+JokalariLista.getJokalariLista().setJokalariKop());
+		JokalariLista.getJokalariLista().imprimatu();
+		
 	}
 	
 	public void printKarta(Jokalari pJokalari) {
+		System.out.println(" ");
+		System.out.println("Hasi partida:");
 		JokalariLista.getJokalariLista().imprimatuKartak(pJokalari);
-		printMahaia();
+		System.out.println(" ");
+		Printeatzea.getNirePrinteatzea().printMahaia();
 	}		
 	
 	public void printMahaia() {
@@ -32,6 +39,10 @@ public class Printeatzea {
 	
 	public void printTestua(String pMezua) {
 		System.out.println(pMezua);
+	}
+
+	public void printAmaitu(Jokalari pJokalari) {
+		System.out.println(pJokalari.getId()+" Zorionak irabazi egin duzu!!");
 	}
 	
 }
