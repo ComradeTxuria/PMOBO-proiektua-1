@@ -1,7 +1,6 @@
 package UnoProiektua;
 import java.util.ArrayList;
 import java.util.*;
-//import java.util.Iterator;
 
 public class JokalariLista {
 	//atributuak
@@ -24,7 +23,6 @@ public class JokalariLista {
 			nireJokalariLista = new JokalariLista();
 		}
 		return nireJokalariLista;
-		Printeatzea.getNirePrinteatzea().printAmaitu(jokalaria);
 	}
 	
 	
@@ -34,14 +32,14 @@ public class JokalariLista {
 		while(i<maxJok)
 		{
 			String izena;
-			/*try
-			{*/
+			try
+			{
 			izena = Teklatua.getTeklatua().getString("Idatzi jokalariaren izena.");
-			/*}
-			catch (InputMismatchException e)
+			}
+			catch (Exception e)
 			{
 				izena = Teklatua.getTeklatua().getString("Idatzi ZUZENA den izen bat.");
-			}*/
+			}
 			Jokalari jokalaria = new Jokalari(izena);
 			jLista.add(jokalaria);
 			i++;
@@ -51,15 +49,6 @@ public class JokalariLista {
 	
 	private Iterator<Jokalari> getIterator(){
 		return this.jLista.iterator();
-	}
-
-	public void imprimatuKartaKop() {
-		Iterator<Jokalari> itr = getIterator();
-		Jokalari j = null;
-		while(itr.hasNext()) {
-			j = itr.next();
-			j.imprimatuKartaKop();
-		}
 	}
 	
 	public void imprimatu() {
@@ -83,6 +72,14 @@ public class JokalariLista {
 		j.imprimatuKartak();
 	}
 	
+	public void imprimatuKartaKop() {
+		Iterator<Jokalari> itr = getIterator();
+		Jokalari j = null;
+		while(itr.hasNext()) {
+			j = itr.next();
+			j.imprimatuKartaKop();
+		}
+	}
 	
 	//partida
 	public void jolastuPartida()
@@ -99,8 +96,9 @@ public class JokalariLista {
 			{
 				i=0;
 			}
-			if(Mazoa.getMazoa().jokoaAmaitua() || jokalaria.jokoaAmaitua())
+			if(jokalaria.jokoaAmaitua())
 			{
+				Printeatzea.getNirePrinteatzea().printAmaitu(jokalaria);
 				jokoaAmaitu = true;
 			}
 		}	
@@ -127,7 +125,7 @@ public class JokalariLista {
 			{
 				jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra MESEDEZ.");
 			}
-			catch(InputMismatchException e) //errorea nola kendu gainetik???
+			catch(Exception e) 
 			{
 				jokKop = Teklatua.getTeklatua().getInt("Ipini ZENBAKIZ zenbat jokalari nahi dituzun, 2tik 4ra.");
 			}
