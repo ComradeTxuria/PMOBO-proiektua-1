@@ -75,9 +75,8 @@ public class KartaZerrenda {
 		}
 	}
 	
-	public void imprimatuAzkena() {
-		System.out.println("Erdiko karta: "
-				+ "");
+	public void imprimatuAzkena(String pMezu) {
+		System.out.println(pMezu + "");
 		kLista.get(kLista.size()-1).imprimatu(-1);
 	}
 	
