@@ -24,6 +24,7 @@ public class JokalariLista {
 			nireJokalariLista = new JokalariLista();
 		}
 		return nireJokalariLista;
+		Printeatzea.getNirePrinteatzea().printAmaitu(jokalaria);
 	}
 	
 	
