@@ -22,7 +22,13 @@ public class Jokalari {
 		System.out.println("ID: " +id);
 	}
 	
-
+	private int jokalariKartaKop() {
+		return eskua.kartaKop();
+	}
+	
+	public void imprimatuKartaKop() {
+		System.out.println(id+" : "+jokalariKartaKop());
+	}
 	
 	public void imprimatuKartak() {
 		imprimatu();
