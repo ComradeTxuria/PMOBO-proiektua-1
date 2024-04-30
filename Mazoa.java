@@ -16,7 +16,12 @@ public class Mazoa {
 	}
 
 
-	public Karta kartaEman() {
+	public Karta kartaEman() 
+	{
+		if(MazoHutsa()==true)
+		{
+			kartakHartu();
+		}
 		Karta k = mazoKartak.getKarta(0);
 		mazoKartak.kenduKarta(0);
 		return k;
@@ -74,10 +79,12 @@ public class Mazoa {
 	public boolean MazoHutsa() {
 		return mazoKartak.hutsa();
 	}
-	/*
-	 * HACER MÁS TARDE private void kartaHartu(Karta pKarta) {
-	 * this.mazoKartak.add(pKarta); }
-	 */
+
+	private void kartakHartu() 
+	{
+		this.mazoKartak = Mahaia.getMahaia().itzuliKartak(); 
+		barageatu();
+	}
 
 	public boolean jokoaAmaitua() {
 		return mazoKartak.hutsa();
