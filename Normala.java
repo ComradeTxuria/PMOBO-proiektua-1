@@ -13,7 +13,7 @@ public class Normala extends Karta {
 		}
 		else 
 		{
-			System.out.println(pPos + " ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
+			System.out.println(pPos+ " -" + " ZENBAKI/KOLORE: "+zenbaki+" "+super.kolore);
 		}
 	}
 	
