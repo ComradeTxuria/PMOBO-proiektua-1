@@ -52,6 +52,15 @@ public class JokalariLista {
 	private Iterator<Jokalari> getIterator(){
 		return this.jLista.iterator();
 	}
+
+	public void imprimatuKartaKop() {
+		Iterator<Jokalari> itr = getIterator();
+		Jokalari j = null;
+		while(itr.hasNext()) {
+			j = itr.next();
+			j.imprimatuKartaKop();
+		}
+	}
 	
 	public void imprimatu() {
 		System.out.println("Jokalari lista");
