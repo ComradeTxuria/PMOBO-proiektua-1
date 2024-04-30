@@ -1,8 +1,6 @@
 package UnoProiektua;
 
 
-import java.util.InputMismatchException;
-
 public class Jokalari {
 	private String id;
 	private KartaZerrenda eskua;
@@ -22,13 +20,7 @@ public class Jokalari {
 		System.out.println("ID: " +id);
 	}
 	
-	private int jokalariKartaKop() {
-		return eskua.kartaKop();
-	}
-	
-	public void imprimatuKartaKop() {
-		System.out.println(id+" : "+jokalariKartaKop());
-	}
+
 	
 	public void imprimatuKartak() {
 		imprimatu();
@@ -50,7 +42,7 @@ public class Jokalari {
 			else
 			{
 				kartaHartu();
-				if(kartaBotaBai() == true)
+				if(kartaBotaBai() == true && x<1)
 				{
 					int botatzeko = botaKarta();
 					kartaEman(botatzeko);
@@ -80,12 +72,13 @@ public class Jokalari {
 		{
 			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ENTER sakatuz");
 		}
-		catch(InputMismatchException e)
+		catch(Exception e)
 		{
 			hartu = Teklatua.getTeklatua().getString("Karta bat hartu ENTER sakatuz");
 		}
 		Karta k = Mazoa.getMazoa().kartaEman();
 		eskua.gehituKarta(k);
+		eskua.imprimatuAzkena("Karta berria: ");
 	}
 	
 	private boolean kartaBotaBai()
@@ -122,11 +115,20 @@ public class Jokalari {
 		{
 			botatzeko = Teklatua.getTeklatua().getInt("Ezin duzu karta hori bota, ipini bota ahal duzun karta bat");
 		}
-		catch(InputMismatchException e)
+		catch(Exception e)
 		{
 			botatzeko = Teklatua.getTeklatua().getInt("Bota nahi duzun karta, ZENBAKI baten bidez adierazi behar duzu");
 		}
 		return botatzeko;
+	}
+	
+	
+	private int jokalariKartaKop() {
+		return eskua.kartaKop();
+	}
+
+	public void imprimatuKartaKop() {
+		System.out.println(id+" : "+jokalariKartaKop());
 	}
 	
 	
@@ -148,6 +150,11 @@ public class Jokalari {
 	public boolean jokoaAmaitua() 
 	{
 		return eskua.hutsa();
+	}
+	
+	public String getId()
+	{
+		return this.id;
 	}
 	
 }
