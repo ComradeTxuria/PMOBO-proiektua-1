@@ -17,7 +17,7 @@ public class Normala extends Karta {
 		}
 	}
 	
-	public int getZenb()
+	protected int getZenb()
 	{
 		return this.zenbaki;
 	}
