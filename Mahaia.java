@@ -21,9 +21,8 @@ public class Mahaia {
 	public Karta itzuliKarta() {
 		Karta k = mKarta.getKarta(mKarta.kartaKop()-1);
 		return k;
-
 	}
-
+	
 	public KartaZerrenda itzuliKartak()
 	{
 		KartaZerrenda itzultzeko = this.mKarta;
@@ -39,8 +38,8 @@ public class Mahaia {
 		boolean bota = mKarta.berdina(pKarta, itzuliKarta());
 		return bota;
 	}
+	
 	public void imprimatuAzkena() {
-		mKarta.imprimatuAzkena();
-		
+		mKarta.imprimatuAzkena("Erdiko karta: ", -1);	
 	}
 }
