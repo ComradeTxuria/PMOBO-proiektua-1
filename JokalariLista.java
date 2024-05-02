@@ -1,4 +1,4 @@
-package UnoProiektua;
+
 import java.util.ArrayList;
 import java.util.*;
 
@@ -47,11 +47,13 @@ public class JokalariLista {
 	}
 	
 	
-	private Iterator<Jokalari> getIterator(){
+	private Iterator<Jokalari> getIterator()
+	{
 		return this.jLista.iterator();
 	}
 	
-	public void imprimatu() {
+	public void imprimatu() 
+	{
 		System.out.println("Jokalari lista");
 		Iterator<Jokalari> itr = getIterator();
 		Jokalari j = null;
@@ -61,18 +63,14 @@ public class JokalariLista {
 		}
 	}
 	
-	public void imprimatuKartak(Jokalari pJokalari) {
-		/*Iterator<Jokalari> itr = getIterator();
-		Jokalari j = null;
-		while(itr.hasNext()) {
-			j = itr.next();
-			j.imprimatuKartak();
-		}*/
+	public void imprimatuKartak(Jokalari pJokalari) 
+	{
 		Jokalari j = pJokalari;
 		j.imprimatuKartak();
 	}
 	
-	public void imprimatuKartaKop() {
+	public void imprimatuKartaKop() 
+	{
 		Iterator<Jokalari> itr = getIterator();
 		Jokalari j = null;
 		while(itr.hasNext()) {
@@ -105,7 +103,7 @@ public class JokalariLista {
 	}
 	
 	//TODO karta gehiago gehitzean, jokalari limitea handitu
-	public int setJokalariKop()
+	private int setJokalariKop()
 	{
 		boolean ondo = false;
 		int jokKop = Teklatua.getTeklatua().getInt("Ipini zenbat jokalari nahi dituzun, 2tik 4ra.");
