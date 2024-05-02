@@ -3,24 +3,21 @@ public class Karta {
 	
 	protected String kolore;
 	
-	public Karta(String pKolore) {
+	protected Karta(String pKolore) {
 		this.kolore = pKolore;
 	}
 	
-	public void imprimatu(int pPos) {
-	}
-	
-	protected void eginAkzio() 
-	{ 
-	}
-
 	public String getKolore()
 	{
 		return this.kolore;
 	}
 	
 	public boolean komparatuZenb(Karta k){return false;}
-	public int getZenb(){return -1;}
+	protected int getZenb(){return -1;}
+	public void imprimatu(int pPos) {}
+	protected boolean komparatuMota(Karta k){return false;}
+	protected void eginAkzio() { }
+	
 	
 	public boolean komparatuKolore(Karta pKarta)
 	{
