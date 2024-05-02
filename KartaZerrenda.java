@@ -9,7 +9,7 @@ public class KartaZerrenda {
 		this.kLista = new ArrayList<>();
 	}
 
-	public Iterator<Karta> getIterator() {
+	private Iterator<Karta> getIterator() {
 		return this.kLista.iterator();
 	}
 
@@ -54,7 +54,6 @@ public class KartaZerrenda {
 		}
 		return berdina;
 	}
-	
 	public int kartaKop() {
 
 		return kLista.size();
@@ -64,7 +63,8 @@ public class KartaZerrenda {
 		return kLista.isEmpty();
 	}
 
-	public void imprimatuKartak() {
+	public void imprimatuKartak() 
+	{
 		int i = 0;
 		Iterator<Karta> itr = getIterator();
 		Karta k = null;
@@ -75,9 +75,10 @@ public class KartaZerrenda {
 		}
 	}
 	
-	public void imprimatuAzkena(String pMezu) {
-		System.out.println(pMezu + "");
-		kLista.get(kLista.size()-1).imprimatu(-1);
+	public void imprimatuAzkena(String pMezu, int pos) {
+		System.out.println(pMezu 
+				+ "");
+		kLista.get(kLista.size()-1).imprimatu(pos);
 	}
 	
 	public void barageatu() {
