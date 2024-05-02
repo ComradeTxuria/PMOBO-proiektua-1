@@ -69,25 +69,22 @@ public class Mazoa {
 		mazoKartak.gehituKarta(b);
 		mazoKartak.gehituKarta(b2);
 		}
-		bararageatu();
+		barageatu();
 	}
 	
-	public void bararageatu(){
+	private void barageatu()
+	{
 		mazoKartak.barageatu();
 	}
 	
-	public boolean MazoHutsa() {
+	private boolean MazoHutsa() 
+	{
 		return mazoKartak.hutsa();
 	}
-
+	
 	private void kartakHartu() 
 	{
 		this.mazoKartak = Mahaia.getMahaia().itzuliKartak(); 
 		barageatu();
 	}
-
-	public boolean jokoaAmaitua() {
-		return mazoKartak.hutsa();
-	}
-
 }
