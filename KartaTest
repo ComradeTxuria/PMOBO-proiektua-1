@@ -28,7 +28,8 @@ public class KartaTest {
 	
 	@Test
 	public void testKomparatuKolore() {
-		assertTrue(k4.komparatuKolore(k3));;
+		assertTrue(k4.komparatuKolore(k3));
+		assertFalse(k2.komparatuKolore(k3));
 	}
 
 }
