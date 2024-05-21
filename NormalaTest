@@ -1,0 +1,40 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class NormalaTest {
+
+	private Normala n1,n2,n3;
+	@Before
+	public void setUp() throws Exception {
+		n1=new Normala(5, "Horia");
+		n2=new Normala(0, "Berdea");
+		n3= new Normala(9, "Urdina");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		n1=null;
+		n2=null;
+		n3=null;
+	}
+ 
+	@Test
+	public void testKomparatuZenb() {
+		assertEquals(5,n1.getZenb());
+		assertEquals(0,n2.getZenb());
+		assertEquals(9,n3.getZenb());
+		assertNotEquals(8, n2.getZenb());
+	}
+
+	@Test
+	public void testGetZenb() {
+		assertNotNull(n3.getZenb());
+		assertNotNull(n2.getZenb());
+		assertNotNull(n1.getZenb());
+	}
+
+
+}
