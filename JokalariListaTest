@@ -1,0 +1,28 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class JokalariListaTest {
+	private JokalariLista jl; 
+
+
+	@Before
+	public void setUp() throws Exception {
+		jl = new JokalariLista();
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		jl= null;
+
+	}
+
+	@Test
+	public void testGetJokalariLista() {
+		assertNotNull(JokalariLista.getJokalariLista());
+	}
+
+}
