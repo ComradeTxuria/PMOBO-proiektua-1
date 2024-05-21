@@ -27,7 +27,7 @@ public class Mahaia {
 	{
 		KartaZerrenda itzultzeko = this.mKarta;
 		Karta k = itzuliKarta();
-		this.mKarta = null;
+		this.mKarta = new KartaZerrenda();
 		mKarta.gehituKarta(k);
 		itzultzeko.kenduKarta(itzultzeko.kartaKop()-1);
 		return itzultzeko;
@@ -42,4 +42,11 @@ public class Mahaia {
 	public void imprimatuAzkena() {
 		mKarta.imprimatuAzkena("Erdiko karta: ", -1);	
 	}
-}
+	
+	
+	///jUnitarentzat///
+	
+	public KartaZerrenda getMahaiaZerrenda()
+	{
+		return this.mKarta;
+	}
