@@ -1,0 +1,29 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class MazoaTest {
+	private Mazoa mz; 
+
+
+	@Before
+	public void setUp() throws Exception {
+		mz = new Mazoa();
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		mz= null;
+
+	}
+
+	@Test
+	public void testGetMazoa() {
+		assertNotNull(Mazoa.getMazoa());
+	}
+
+
+}
