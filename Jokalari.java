@@ -156,5 +156,67 @@ public class Jokalari {
 	{
 		return this.id;
 	}
+
+		///jUnitaren probak///
+	public int botaKartaTest(int botatzeko)
+	{
+		boolean ondo = false;
+		while(ondo == false) try
+		{
+			if(botatzeko<0 || botatzeko>eskua.kartaKop()-1)
+			{
+				throw (new ZenbakiLimite());
+			}
+			else if(botaDaiteke(botatzeko) == false)
+			{
+				throw (new KartaOkerra());
+			}
+			else
+			{
+				ondo = true;
+			}
+		}
+		catch(ZenbakiLimite e)
+		{
+			botatzeko = -69;
+		}
+		catch(KartaOkerra e)
+		{
+			botatzeko = -69;
+		}
+		catch(Exception e)
+		{
+			botatzeko = -69;
+		}
+		return botatzeko;
+	}
+	
+	
+	
+	public void kartaHartuTest(String hartu)
+	{
+		boolean ondo = false;
+		while (ondo == false) try
+		{
+			if (!hartu.equals(""))
+			{
+				throw (new Okerra());
+			}
+			else
+			{
+				ondo = true;
+			}
+		}
+		catch(Okerra e)
+		{
+			hartu = null;
+		}
+		catch(Exception e)
+		{
+			hartu = null;
+		}
+		Karta k = Mazoa.getMazoa().kartaEman();
+		eskua.gehituKarta(k);
+	}
 	
 }
