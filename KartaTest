@@ -1,0 +1,34 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class KartaTest {
+	private Karta k2,k3,k4;	
+	
+	@Before
+	public void setUp() throws Exception {
+		k2 = new Karta("Urdina");
+		k3 = new Karta("Gorria");
+		k4=new Karta("Gorria");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		k2= null;
+		k3=null;
+		k4=null;
+	}
+
+	@Test
+	public void testGetKolore() {
+		assertEquals("Urdina", k2.getKolore());
+	}
+	
+	@Test
+	public void testKomparatuKolore() {
+		assertTrue(k4.komparatuKolore(k3));;
+	}
+
+}
