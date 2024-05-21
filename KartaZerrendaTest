@@ -1,0 +1,83 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class KartaZerrendaTest {
+	
+	private KartaZerrenda Zerrenda1;
+	private Karta k1,k2,k3;
+
+	@Before
+	public void setUp() throws Exception {
+		Zerrenda1= new KartaZerrenda();
+		k1= new Karta("Berdea");
+		k2=new Karta("Urdina");
+		k3= new Karta("Gorria");
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		Zerrenda1= null;
+		k1=null;
+		k2=null;
+		k3=null;
+	}
+
+	@Test
+	public void testGetKarta() {
+		Zerrenda1.gehituKarta(k1);
+		assertEquals(k1,Zerrenda1.getKarta(0));
+	}
+
+	@Test
+	public void testKenduKarta() {
+		assertEquals(0, Zerrenda1.kartaKop());
+		Zerrenda1.gehituKarta(k1);
+		Zerrenda1.gehituKarta(k2);
+		assertEquals(2, Zerrenda1.kartaKop());
+		Zerrenda1.kenduKarta(1);
+		assertEquals(1, Zerrenda1.kartaKop());
+	}
+
+	@Test
+	public void testGehituKarta() {
+		assertEquals(0, Zerrenda1.kartaKop());
+		Zerrenda1.gehituKarta(k1);
+		assertEquals(1, Zerrenda1.kartaKop());
+	}
+
+	@Test
+	public void testBotaKartak() {
+		Zerrenda1.gehituKarta(k1);
+		Zerrenda1.gehituKarta(k3);
+		assertTrue(Zerrenda1.botaKartak(k1));
+		assertFalse(Zerrenda1.botaKartak(k2));
+		
+	}
+
+	@Test
+	public void testBerdina() {
+		assertEquals("Berdea",k1.getKolore());
+		assertEquals("Gorria",k3.getKolore());
+	}
+
+	@Test
+	public void testKartaKop() {
+		assertEquals(0, Zerrenda1.kartaKop());
+		Zerrenda1.gehituKarta(k1);
+		Zerrenda1.gehituKarta(k2);
+		Zerrenda1.gehituKarta(k3);
+		assertEquals(3, Zerrenda1.kartaKop());
+	}
+
+	@Test
+	public void testHutsa() {
+		Zerrenda1.gehituKarta(k1);
+		assertEquals(1, Zerrenda1.kartaKop());
+		Zerrenda1.kenduKarta(0);
+		assertTrue(Zerrenda1.hutsa());
+	}
+}
