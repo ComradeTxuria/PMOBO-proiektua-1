@@ -178,11 +178,9 @@ public class Jokalari {
 		}
 		catch(ZenbakiLimite e)
 		{
-			botatzeko = -69;
 		}
 		catch(KartaOkerra e)
 		{
-			botatzeko = -69;
 		}
 		catch(Exception e)
 		{
@@ -193,7 +191,7 @@ public class Jokalari {
 	
 	
 	
-	public void kartaHartuTest(String hartu)
+	public String kartaHartuTest(String hartu)
 	{
 		boolean ondo = false;
 		while (ondo == false) try
@@ -217,6 +215,7 @@ public class Jokalari {
 		}
 		Karta k = Mazoa.getMazoa().kartaEman();
 		eskua.gehituKarta(k);
+		return hartu;
 	}
 	
 }
